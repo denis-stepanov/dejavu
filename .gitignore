@@ -4,6 +4,5 @@ mp3
 *.wav
 *.mp3
 .DS_Store
-*.cnf
 PyDejavu.egg-info
 build

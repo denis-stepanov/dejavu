@@ -1,0 +1,9 @@
+{
+    "database": {
+        "host": "localhost",
+        "user": "advent",
+        "password": "advent", 
+        "database": "advent"
+    },
+    "database_type" : "postgres"
+}
