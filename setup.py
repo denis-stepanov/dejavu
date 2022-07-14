@@ -56,4 +56,9 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
     keywords="python, audio, fingerprinting, music, numpy, landmark",
+    entry_points={
+        "console_scripts": [
+            "dejavu = dejavu_py.__main__"
+        ]
+    },
 )
