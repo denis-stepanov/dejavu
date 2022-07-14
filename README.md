@@ -1,3 +1,7 @@
+About
+==========
+This clone of [Dejavu](https://github.com/worldveil/dejavu) software contains adaptations to facilitate its use with [AdVent](https://github.com/denis-stepanov/advent) software. No functional changes to Dejavu have been made.
+
 dejavu
 ==========
 
