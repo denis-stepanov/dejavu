@@ -8,7 +8,8 @@ from dejavu import Dejavu
 from dejavu.logic.recognizer.file_recognizer import FileRecognizer
 from dejavu.logic.recognizer.microphone_recognizer import MicrophoneRecognizer
 
-DEFAULT_CONFIG_FILE = "dejavu.cnf.SAMPLE"
+from pkg_resources import Requirement, resource_filename
+DEFAULT_CONFIG_FILE = resource_filename(Requirement.parse("PyDejavu"),"dejavu_py/dejavu.cnf")
 
 
 def init(configpath):
