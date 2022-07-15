@@ -83,3 +83,5 @@ elif args.recognize:
     elif source == 'file':
         songs = djv.recognize(FileRecognizer, opt_arg)
     print(songs)
+
+sys.exit(0)
