@@ -58,7 +58,7 @@ setup(
     keywords="python, audio, fingerprinting, music, numpy, landmark",
     entry_points={
         "console_scripts": [
-            "dejavu = dejavu_py.__main__:main"
+            "dejavu = dejavu_py.dejavu:main"
         ]
     },
 )
