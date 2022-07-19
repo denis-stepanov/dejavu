@@ -15,7 +15,7 @@ def parse_requirements(requirements):
 
 
 PACKAGE_NAME = "PyDejavu"
-PACKAGE_VERSION = "0.1.3-ds1.1.0"
+PACKAGE_VERSION = "0.1.3-ds1.1.2"
 SUMMARY = 'Dejavu: Audio Fingerprinting in Python'
 DESCRIPTION = """
 Audio fingerprinting and recognition algorithm implemented in Python
@@ -58,7 +58,7 @@ setup(
     keywords="python, audio, fingerprinting, music, numpy, landmark",
     entry_points={
         "console_scripts": [
-            "dejavu = dejavu_py.__main__"
+            "dejavu = dejavu_py.__main__:main"
         ]
     },
 )
