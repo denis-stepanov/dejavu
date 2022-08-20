@@ -2,6 +2,8 @@ import hashlib
 from operator import itemgetter
 from typing import List, Tuple
 
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
 import numpy as np
