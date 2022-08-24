@@ -5,8 +5,12 @@ This clone of [Dejavu](https://github.com/worldveil/dejavu) software contains ad
 * `dejavu/base_classes/common_database.py`: remove SQL cursor buffering, as PostgreSQL does not seem to accept it;
 * `dejavu/logic/recognizer/microphone_recognizer.py`: suppress debug printout;
 * `dejavu.py`: package `dejavu.py` as `dejavu` command line. Package and make use of `dejavu.cnf`;
-* `dejavu/logic/fingerprint.py`: avoid graphical environment brought by mathplotlib;
-* (tried on a local copy but not retained) switch Dejavu from 44.1 kHz to 48 kHz.
+* `dejavu/logic/fingerprint.py`: avoid graphical environment brought by mathplotlib.
+
+R&D changes not retained in master but kept on branches:
+
+* switch Dejavu from 44.1 kHz to 48 kHz;
+* [save-input](https://github.com/denis-stepanov/dejavu/tree/save-input): save microphone input into files to check that they are not distorted by multi-threading.
 
 dejavu
 ==========
