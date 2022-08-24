@@ -9,7 +9,7 @@ This clone of [Dejavu](https://github.com/worldveil/dejavu) software contains ad
 
 R&D changes not retained in master but kept on branches:
 
-* switch Dejavu from 44.1 kHz to 48 kHz;
+* [48kHz](https://github.com/denis-stepanov/dejavu/tree/48kHz): switch Dejavu from 44.1 kHz to 48 kHz;
 * [save-input](https://github.com/denis-stepanov/dejavu/tree/save-input): save microphone input into files to check that they are not distorted by multi-threading.
 
 dejavu
