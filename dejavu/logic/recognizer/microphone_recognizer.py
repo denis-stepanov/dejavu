@@ -1,20 +1,24 @@
 import numpy as np
 import pyaudio
+import wave
 
 from dejavu.base_classes.base_recognizer import BaseRecognizer
 
+wav_count = 1
 
 class MicrophoneRecognizer(BaseRecognizer):
     default_chunksize = 8192
     default_format = pyaudio.paInt16
     default_channels = 2
     default_samplerate = 44100
+    data_bin = []
 
     def __init__(self, dejavu):
         super().__init__(dejavu)
         self.audio = pyaudio.PyAudio()
         self.stream = None
         self.data = []
+        self.data_bin = []
         self.channels = MicrophoneRecognizer.default_channels
         self.chunksize = MicrophoneRecognizer.default_chunksize
         self.samplerate = MicrophoneRecognizer.default_samplerate
@@ -41,6 +45,7 @@ class MicrophoneRecognizer(BaseRecognizer):
         )
 
         self.data = [[] for i in range(channels)]
+        self.data_bin = []
 
     def process_recording(self):
         data = self.stream.read(self.chunksize)
@@ -48,6 +53,7 @@ class MicrophoneRecognizer(BaseRecognizer):
         # print(nums)
         for c in range(self.channels):
             self.data[c].extend(nums[c::self.channels])
+        self.data_bin.append(data)
 
     def stop_recording(self):
         self.stream.stop_stream()
@@ -58,6 +64,18 @@ class MicrophoneRecognizer(BaseRecognizer):
     def recognize_recording(self):
         if not self.recorded:
             raise NoRecordingError("Recording was not complete/begun")
+
+        # DNS: save input into files for verification
+        global wav_count
+        wav_filename = f"output_{wav_count:06}.wav"
+        wav_count += 1
+        wf = wave.open(wav_filename, 'wb')
+        wf.setnchannels(self.channels)
+        wf.setsampwidth(self.audio.get_sample_size(self.default_format))
+        wf.setframerate(self.samplerate)
+        wf.writeframes(b''.join(self.data_bin))
+        wf.close()
+
         return self._recognize(*self.data)
 
     def get_recorded_time(self):
