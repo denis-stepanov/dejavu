@@ -5,7 +5,8 @@ This clone of [Dejavu](https://github.com/worldveil/dejavu) software contains ad
 * `dejavu/base_classes/common_database.py`: remove SQL cursor buffering, as PostgreSQL does not seem to accept it;
 * `dejavu/logic/recognizer/microphone_recognizer.py`: suppress debug printout;
 * `dejavu.py`: package `dejavu.py` as `dejavu` command line. Package and make use of `dejavu.cnf`;
-* `dejavu/logic/fingerprint.py`: avoid graphical environment brought by mathplotlib.
+* `dejavu/logic/fingerprint.py`: avoid graphical environment brought by mathplotlib;
+* `dejavu/config/settings.py`: reduce number of results being returned from recognition from 2 to 1, as AdVent only uses 1.
 
 R&D changes not retained in master but kept on branches:
 
