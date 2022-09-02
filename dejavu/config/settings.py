@@ -99,4 +99,4 @@ PEAK_SORT = True
 FINGERPRINT_REDUCTION = 20
 
 # Number of results being returned for file recognition
-TOPN = 2
+TOPN = 1
