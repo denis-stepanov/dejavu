@@ -6,7 +6,9 @@ This clone of [Dejavu](https://github.com/worldveil/dejavu) software contains ad
 * `dejavu/logic/recognizer/microphone_recognizer.py`: suppress debug printout;
 * `dejavu.py`: package `dejavu.py` as `dejavu` command line. Package and make use of `dejavu.cnf`;
 * `dejavu/logic/fingerprint.py`: avoid graphical environment brought by mathplotlib;
-* `dejavu/config/settings.py`: reduce number of results being returned from recognition from 2 to 1, as AdVent only uses 1.
+* `dejavu/config/settings.py`:
+    * update settings `DEFAULT_WINDOW_SIZE` 4096 ➔ 1024, `DEFAULT_OVERLAP_RATIO` 0.5 ➔ 0.75 and `DEFAULT_FAN_VALUE` 5 ➔ 15 to boost fingerprinting density roughly five-fold. This is needed because AdVent operates on very short tracks;
+    * `TOPN` setting: decrease 2 ➔ 1, as AdVent uses only the first result returned.
 
 R&D changes not retained in master but kept on branches:
 
